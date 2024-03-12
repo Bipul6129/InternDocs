@@ -1,0 +1,43 @@
+ctrl+arrow keys
+	move from 1 cell to another which has data available
+
+shift+arrow keys
+	select data fro a cell to next cell
+
+ctrl+shift+arrow keys
+	select data in a row/column
+
+ctrl+page down
+	move to next sheet
+
+ctrl+page up
+	move to previous sheet
+
+alt+=
+	autosum
+
+ctrl+1
+	change format
+
+alt
+	short cut key to use nav bar from keyboard
+
+alt+hoi
+	extend the cells to fit data
+
+alt+hk
+	put commas in thousand
+
+alt+hp
+	convert decimal to percentage
+
+alt+h0
+	extend decimal place on percentage
+
+alt+ae
+	seprate the cell content with any symbol
+
+PASTE SPEIAL
+	alt->e->s
+		copy values not ref formula
+		

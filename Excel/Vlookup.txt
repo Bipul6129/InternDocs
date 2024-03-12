@@ -1,0 +1,11 @@
+Vlookup
+	Excel function to find specific information in vertical pattern across a table or Excel sheet.
+
+	VLOOKUP(target_cell,table_array,col_index,0)
+	0 means same
+	1 means approximate match
+	
+
+	use f4 on cells to lock them 
+
+	IFNA(VALOOKUP(....),"not found")

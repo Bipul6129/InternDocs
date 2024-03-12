@@ -1,0 +1,33 @@
+if u want to appply formula on all selected cells use ctrl+enter not enter to relect changes to all cells
+
+IF ELSE CONDITION
+	IF(condition,'true val','false val')
+
+AND 
+	AND(logic1,logic2)
+
+OR
+	OR(logic1,logic2)
+
+
+TO FETCH DATE DATA ON CELL
+
+	TEXT(target_cell,"format")
+	format-"mmm","ddd","yyyy"
+
+	WEEKNUM(target_cell)
+
+TO CONCAT the cells data
+
+	= CONCAT(target_cell,"any symbol",target_cell)
+
+TEXT To COLUMN
+
+	select the cells then
+	alt->a->e
+
+UPPER,LOWER,PROPER
+
+	UPPER(target_cell)
+
+CONDITIONAL FORMATTING

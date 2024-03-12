@@ -1,0 +1,140 @@
+RDBMS
+
+	RDBMS
+	- program that allows to create,update and administer relational database.
+
+	Relational Database
+	- type of database that uses structure that allows to identify and access data in relation to another piece of data in the database.
+
+
+Entity relationship
+	is an illustration of various entities in a business and the relationships among them.
+
+
+Handling NULLS
+	
+	IFNULL():
+		SELECT IFNULL(col_name,'def_value') FROM table;
+
+		- returns value of col_name if it is not null if null then returns def_value
+
+	COALESCE():
+		SELECT COALESCE(col1,col2,'def_value') FROM table;
+
+		- returns the value of col1 if not null else checks col2 if both null returns def value
+
+	NVL():
+		SELECT NVL(col1,'def_val') FROM table;
+
+		- in sole rdbms such as oracle used same as ifnull
+
+
+
+
+
+Type Casting
+	- conversion of one data type to other
+
+	SELECT CAST(age_col AS INT) FROM table;
+
+
+Wild Cards
+	- used in conjuction with the LIKE opetator to search patterns within text.
+
+	- % represents zero or more characters
+	- _ represents a single character
+	- [] represents any single character within brackets
+	- ^ Represents any character not in the brackets
+	- - represents any single character within the specified range
+
+	SELET * FROM col WHERE col_name LIKE 'Jhon%';
+
+
+
+
+Common Function
+	
+	CHARINDEX
+		- SELECT CHARINDEX('abc',col) FROM table;
+
+		- returns the starting pos of the substring 'abc' within the alues of col in table
+
+	SUBSTRING
+		- SELECT SUBSTRING(col,4,3) FROM table;
+
+		- returns a substring consisting of three characs starting from fourth in each value
+
+	CONCAT
+		- SELECT CONCAT(first_col,' ',second_col) FROM table;
+
+		- concatenates the first and last cols with space between
+
+
+
+SET Operators
+	SELECT employee_id FROM employees 
+	UNION
+	SELECT employee_id FROM job_history;
+
+	UNION
+	- returns all rows that are selected by either query
+
+	UNION ALL
+	- same as UNION but includes all duplicates
+
+	INTERSECT
+	- takes the data from both result sets which are in common.
+
+	MINUS
+	- returns rows in the first query that are not present in second query
+
+
+
+JOINS
+
+	SELECT colname FROM table INNER JOIN table2 ON table.col = table2.col;
+
+	INNER JOIN 
+	OUTER JOIN
+	- LEFT JOIN
+	- RIGHT JOIN
+	- FULL JOIN 
+	SELF JOIN
+	CROSS JOIN
+	- xombines each row from first table with each row from the second table
+	ANTIJOIN
+	- type of join that returns rows from the left table where there is no match on the right table. You can achieve this using NOT EXISTS or NOT IN clause
+
+
+MERGE
+	- It is the combination of three INSERT,DELETE and UPDATE statements.There is a source tabke and target table that needs to be merged then with the help of MERGE statement all three operations can be performed at once.
+
+
+CTE( common table expressions)
+	A temporary named result set that u can reference within a SELECT,UPDATE,INSERT, or DELETE statement.
+
+	We can define CTEs by adding a WITH clause directly before SELECT, INSERT, UPDATE, DELETE or MERGE statement.
+
+
+Stored Procedure
+	Used to automate the task that requires multiple SQL statements and is performed frequently.
+
+
+LAG,LEAD
+
+
+RANK FUNCTIONS
+	Rank()
+		- Assigns unique rank to each distinct row based on specified col values. Rows with equal rank receive same rank and next rank is skipped.
+
+		SELECT col1, RANK() OVER(ORDER BY col1) AS ranking FROM table;
+
+	DENSE_RANK()
+		- similar to RANK() but does not skip rank values for equal rows.
+
+		SELECT col1, RANK() OVER(ORDER BY col1) AS dense_ranking FROM table;
+
+	ROW_NUMBER()
+		- assigns a unique number to each row based on the specified column values. Rows with equal values receive different row numbers.
+
+		SELECT col1, ROW_NUMBER() OVER(ORDER BY col1) AS row_number FROM table;
