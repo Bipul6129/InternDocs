@@ -1,0 +1,39 @@
+Docker
+
+Container
+	A container is a sandboxed process running on a host machine that is isolated from all other processes running on that host machine.
+
+	Is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI.
+
+	Starting a Container
+		- docker run -dp 127.0.0.1:3000:3000 img-name
+
+	List Containers
+		- docker ps
+		- docker ps -a (means show all container)
+
+	Stopping Container
+		- docker stop container-id
+
+	Build updated Container
+		- docker build -t container-name
+
+	Remove Container
+		- docker rm container-id
+
+
+Image
+	A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. 
+
+	Building the app's image
+		- create a Dockerfile on directory
+		- add contents inside dockerfile
+		- docker build -t name-image .
+
+
+Volumes
+	Volumes provide the ability to connect specific filesystem paths of the container back to the host machine. 
+	If you mount a directory in the container, changes in that directory are also seen on the host machine.
+	If you mount that same directory across container restarts, you'd see the same files.
+
+	
