@@ -21,6 +21,11 @@ Container
 	Remove Container
 		- docker rm container-id
 
+	Starting a Container with interactive mode
+		- docker run -it --mount "type=bind, src=%cd%, target=/src" ubuntu bash
+
+	
+
 
 Image
 	A running container uses an isolated filesystem. This isolated filesystem is provided by an image, and the image must contain everything needed to run an application - all dependencies, configurations, scripts, binaries, etc. 
@@ -36,4 +41,9 @@ Volumes
 	If you mount a directory in the container, changes in that directory are also seen on the host machine.
 	If you mount that same directory across container restarts, you'd see the same files.
 
-	
+
+	Creating Volume
+		- docker volume create vol-name
+
+	Running container with volume
+		- docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=vol-name,target=/etc/todos getting-started
