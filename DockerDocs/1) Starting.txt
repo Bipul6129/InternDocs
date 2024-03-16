@@ -41,9 +41,28 @@ Volumes
 	If you mount a directory in the container, changes in that directory are also seen on the host machine.
 	If you mount that same directory across container restarts, you'd see the same files.
 
-
 	Creating Volume
 		- docker volume create vol-name
 
 	Running container with volume
 		- docker run -dp 127.0.0.1:3000:3000 --mount type=volume,src=vol-name,target=/etc/todos getting-started
+
+
+Container Networking
+	If you place the two containers on the same network, they can talk to each other.
+
+	Creating Network
+		- docker network create net-name
+
+	Starting mysqlcontainer and attach it to network
+		docker run -d ^
+		    --network todo-app --network-alias mysql ^
+		    -v todo-mysql-data:/var/lib/mysql ^
+		    -e MYSQL_ROOT_PASSWORD=secret ^
+		    -e MYSQL_DATABASE=todos ^
+		    mysql:8.0
+
+	nicolaka/netshoot
+		- docker run -it --network net-name nicolaka/netshoot
+		- dig mysql
+		
